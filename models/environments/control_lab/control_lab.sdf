@@ -1,0 +1,301 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.9">
+  <model name="control_lab">
+    <static>true</static>
+    <link name="lab_link">
+      <collision name="lab_collision">
+        <pose degrees="true">0 0 0 90 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>meshes/Lab_drones_sin_pistas_V2.obj</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <visual name="lab_visual">
+        <pose degrees="true">0 0 0 90 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>meshes/Lab_drones_sin_pistas_V2.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <!-- Power control side lights-->
+
+      <light type="point" name="LEP11">
+        <pose>1.4 0.75 2.65 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <intensity>0.6</intensity>
+        <attenuation>
+          <constant>0.8</constant>
+        </attenuation>
+        <visualize>false</visualize>
+      </light>
+
+      <light type="point" name="LEP12">
+        <pose>1.4 2.55 2.65 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <intensity>0.6</intensity>
+        <attenuation>
+          <constant>0.8</constant>
+        </attenuation>
+        <visualize>false</visualize>
+      </light>
+
+      <light type="point" name="LEP13">
+        <pose>1.4 4.35 2.65 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <intensity>0.6</intensity>
+        <attenuation>
+          <constant>0.8</constant>
+        </attenuation>
+        <visualize>false</visualize>
+      </light>
+
+      <light type="point" name="LEP21">
+        <pose>3.8 0.75 2.9 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <intensity>0.6</intensity>
+        <attenuation>
+          <constant>0.8</constant>
+        </attenuation>
+        <visualize>false</visualize>
+      </light>
+
+      <light type="point" name="LEP22">
+        <pose>3.8 2.55 2.9 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <intensity>0.6</intensity>
+        <attenuation>
+          <constant>0.8</constant>
+        </attenuation>
+        <visualize>false</visualize>
+      </light>
+
+      <light type="point" name="LEP23">
+        <pose>3.8 4.35 2.9 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <intensity>0.6</intensity>
+        <attenuation>
+          <constant>0.8</constant>
+        </attenuation>
+        <visualize>false</visualize>
+      </light>
+
+      <light type="point" name="LEP31">
+        <pose>6.2 0.75 2.9 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <intensity>0.6</intensity>
+        <attenuation>
+          <constant>0.8</constant>
+        </attenuation>
+        <visualize>false</visualize>
+      </light>
+
+      <light type="point" name="LEP32">
+        <pose>6.2 2.55 2.9 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <intensity>0.6</intensity>
+        <attenuation>
+          <constant>0.8</constant>
+        </attenuation>
+        <visualize>false</visualize>
+      </light>
+
+      <light type="point" name="LEP33">
+        <pose>6.2 4.35 2.9 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <intensity>0.6</intensity>
+        <attenuation>
+          <constant>0.8</constant>
+        </attenuation>
+        <visualize>false</visualize>
+      </light>
+
+      <light type="point" name="LEP41">
+        <pose>8.6 0.75 2.9 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <intensity>0.6</intensity>
+        <attenuation>
+          <constant>0.8</constant>
+        </attenuation>
+        <visualize>false</visualize>
+      </light>
+
+      <light type="point" name="LEP42">
+        <pose>8.6 2.55 2.9 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <intensity>0.6</intensity>
+        <attenuation>
+          <constant>0.8</constant>
+        </attenuation>
+        <visualize>false</visualize>
+      </light>
+
+      <light type="point" name="LEP43">
+        <pose>8.6 4.35 2.9 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <intensity>0.6</intensity>
+        <attenuation>
+          <constant>0.8</constant>
+        </attenuation>
+        <visualize>false</visualize>
+      </light>
+
+
+      <!-- Control side lights -->
+
+      <light type="point" name="LEC11">
+        <pose>1.4 -1.05 2.65 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <intensity>0.6</intensity>
+        <attenuation>
+          <constant>0.8</constant>
+        </attenuation>
+        <visualize>false</visualize>
+      </light>
+
+      <light type="point" name="LEC12">
+        <pose>1.4 -2.85 2.65 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <intensity>0.6</intensity>
+        <attenuation>
+          <constant>0.8</constant>
+        </attenuation>
+        <visualize>false</visualize>
+      </light>
+
+      <light type="point" name="LEC13">
+        <pose>1.4 -4.65 2.65 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <intensity>0.6</intensity>
+        <attenuation>
+          <constant>0.8</constant>
+        </attenuation>
+        <visualize>false</visualize>
+      </light>
+
+      <light type="point" name="LEC21">
+        <pose>3.8 -1.05 2.9 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <intensity>0.6</intensity>
+        <attenuation>
+          <constant>0.8</constant>
+        </attenuation>
+        <visualize>false</visualize>
+      </light>
+
+      <light type="point" name="LEC22">
+        <pose>3.8 -2.85 2.9 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <intensity>0.6</intensity>
+        <attenuation>
+          <constant>0.8</constant>
+        </attenuation>
+        <visualize>false</visualize>
+      </light>
+
+      <light type="point" name="LEC23">
+        <pose>3.8 -4.65 2.9 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <intensity>0.6</intensity>
+        <attenuation>
+          <constant>0.8</constant>
+        </attenuation>
+        <visualize>false</visualize>
+      </light>
+
+      <light type="point" name="LEC31">
+        <pose>6.2 -1.05 2.9 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <intensity>0.6</intensity>
+        <attenuation>
+          <constant>0.8</constant>
+        </attenuation>
+        <visualize>false</visualize>
+      </light>
+
+      <light type="point" name="LEC32">
+        <pose>6.2 -2.85 2.9 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <intensity>0.6</intensity>
+        <attenuation>
+          <constant>0.8</constant>
+        </attenuation>
+        <visualize>false</visualize>
+      </light>
+
+      <light type="point" name="LEC33">
+        <pose>6.2 -4.65 2.9 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <intensity>0.6</intensity>
+        <attenuation>
+          <constant>0.8</constant>
+        </attenuation>
+        <visualize>false</visualize>
+      </light>
+
+      <light type="point" name="LEC41">
+        <pose>8.6 -1.05 2.9 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <intensity>0.6</intensity>
+        <attenuation>
+          <constant>0.8</constant>
+        </attenuation>
+        <visualize>false</visualize>
+      </light>
+
+      <light type="point" name="LEC42">
+        <pose>8.6 -2.85 2.9 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <intensity>0.6</intensity>
+        <attenuation>
+          <constant>0.8</constant>
+        </attenuation>
+        <visualize>false</visualize>
+      </light>
+
+      <light type="point" name="LEC43">
+        <pose>8.6 -4.65 2.9 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <intensity>0.6</intensity>
+        <attenuation>
+          <constant>0.8</constant>
+        </attenuation>
+        <visualize>false</visualize>
+      </light>
+
+      <light type="point" name="LEC51">
+        <pose>11 -1.05 2.65 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <intensity>0.6</intensity>
+        <attenuation>
+          <constant>0.8</constant>
+        </attenuation>
+        <visualize>false</visualize>
+      </light>
+
+      <light type="point" name="LEC52">
+        <pose>11 -2.85 2.65 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <intensity>0.6</intensity>
+        <attenuation>
+          <constant>0.8</constant>
+        </attenuation>
+        <visualize>false</visualize>
+      </light>
+
+      <light type="point" name="LEC53">
+        <pose>11 -4.65 2.65 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <intensity>0.6</intensity>
+        <attenuation>
+          <constant>0.8</constant>
+        </attenuation>
+        <visualize>false</visualize>
+      </light>
+    </link>
+  </model>
+</sdf>

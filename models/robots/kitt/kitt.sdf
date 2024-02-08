@@ -1,0 +1,317 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.9">
+  <model name="kitt" canonical_link="car_body">
+    <link name="car_body">
+      <pose>0 0 0.05 0 0 0</pose>
+      <visual name="visual">
+        <!-- Mesh center moved to wheels axis' middle point -->
+        <pose degrees="true">-0.0145 -0.10335 0.0504 -90 0 0</pose>
+
+        <geometry>
+          <mesh>
+            <uri>meshes/SegwayOrientaGazeboSinRuedasNiWF.STL</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0 0 0.8 1</ambient>
+          <diffuse>0 0 0.8 1</diffuse>
+          <specular>0 0 0.8 1</specular>
+        </material>
+      </visual>
+
+      <collision name="main_body_collision">
+        <pose>0.0786 0 0 0 0 0</pose>
+        <geometry>
+          <box><size>0.1862 0.1547 0.074</size></box>
+        </geometry>
+      </collision>
+
+      <inertial>
+        <pose>0.074 -0.01 0 0 0 0</pose>
+        <mass>1.404</mass>
+        <inertia>
+          <ixx>0.00294</ixx>
+          <iyy>0.00468</iyy>
+          <izz>0.00658</izz>
+        </inertia>
+      </inertial>
+
+      <sensor name="imu_sensor" type="imu">
+        <pose degrees="true">0.135 -0.003 0 -90 0 -90</pose>
+        <always_on>1</always_on>
+        <!-- <update_rate>20</update_rate> -->
+        <visualize>true</visualize>
+        <topic>model/kitt/imu</topic>
+        <imu><enable_orientation>false</enable_orientation></imu>
+      </sensor>
+    </link>
+
+    <link name="wall_follower">
+      <pose degrees="true">0.1575 -0.10585 0.052 0 0 0</pose>
+      <visual name="visual">
+        <pose>-0.077 -0.0025 -0.018 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>meshes/SoporteSensores.STL</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0 0 0 1</specular>
+        </material>
+      </visual>
+
+      <collision name="wall_follower">
+        <geometry>
+          <box><size>0.154 0.005 0.036</size></box>
+        </geometry>
+      </collision>
+
+      <inertial>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <iyy>0.0000001</iyy>
+          <izz>0.0000001</izz>
+        </inertia>
+      </inertial>
+
+
+      <sensor name="front_dist_sensor" type="gpu_lidar">
+        <pose degrees="true">0.05 -0.0025 0 0 0 -90</pose>
+        <update_rate>10</update_rate>
+        <topic>model/kitt/front_dist_sensor</topic>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.001</min>
+            <max>0.1</max> <!-- Overflow if set to more than 0.2 -->
+            <resolution>0.001</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.002</stddev>
+          </noise>
+        </lidar>
+      </sensor>
+
+      <sensor name="back_dist_sensor" type="gpu_lidar">
+        <pose>-0.05 -0.0025 0 0 0 -1.5708</pose>
+        <update_rate>10</update_rate>
+        <topic>model/kitt/back_dist_sensor</topic>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.001</min>
+            <max>0.1</max> <!-- Overflow if set to more than 0.2 -->
+            <resolution>0.001</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.002</stddev>
+          </noise>
+        </lidar>
+      </sensor>
+    </link>
+
+    <link name="right_wheel">
+      <pose degrees="true">0 -0.10085 0.05 180 0 0</pose>
+      <visual name="wheel_visual">
+        <pose degrees="true">-0.05 0.02668 -0.05 90 0 0</pose>
+
+        <geometry>
+          <mesh>
+            <uri>meshes/Rueda100mm.STL</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+        </material>
+      </visual>
+
+      <collision name="wheel_collision">
+        <pose degrees="true">0 0 0 90 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.026</length>
+          </cylinder>
+        </geometry>
+        <surface>
+        <!-- This friction pamareters don't contain reliable data!! -->
+          <friction>
+            <ode>
+              <mu>100000.0</mu>
+              <mu2>100000.0</mu2>
+              <fdir1>0 0 0</fdir1>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+      <inertial>
+        <mass>0.12</mass>
+        <inertia>
+          <ixx>0.000099</ixx>
+          <iyy>0.000187</iyy>
+          <izz>0.000099</izz>
+        </inertia>
+      </inertial>
+    </link>
+
+    <link name="left_wheel">
+      <pose>0 0.10085 0.05 0 0 0</pose>
+      <visual name="wheel_visual">
+        <pose degrees="true">-0.05 0.02668 -0.05 90 0 0</pose>
+
+        <geometry>
+          <mesh>
+            <uri>meshes/Rueda100mm.STL</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+        </material>
+      </visual>
+
+      <collision name="wheel_collision">
+        <pose degrees="true">0 0 0 90 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>0.026</length>
+          </cylinder>
+        </geometry>
+        <surface>
+        <!-- This friction pamareters don't contain reliable data!! -->
+          <friction>
+            <ode>
+              <mu>100000.0</mu>
+              <mu2>100000.0</mu2>
+              <fdir1>0 0 0</fdir1>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      
+
+      <inertial>
+        <mass>0.12</mass>
+        <inertia>
+          <ixx>0.000099</ixx>
+          <iyy>0.000187</iyy>
+          <izz>0.000099</izz>
+        </inertia>
+      </inertial>
+    </link>
+
+    <frame name="caster_frame" attached_to="car_body">
+      <pose>0.107 0 -0.041 0 0 0</pose>
+    </frame>
+
+    <link name="caster_wheel">
+      <pose relative_to="caster_frame"/>
+      <inertial>
+        <mass>0.02</mass>
+        <inertia>
+          <ixx>0.000001</ixx>
+          <iyy>0.000001</iyy>
+          <izz>0.000001</izz>
+        </inertia>
+      </inertial>
+      <visual name="caster_visual">
+        <geometry>
+          <sphere>
+            <radius>0.009</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+        </material>
+      </visual>
+      <collision name="caster_collision">
+        <geometry>
+          <sphere>
+            <radius>0.01</radius>
+          </sphere>
+        </geometry>
+      </collision>
+    </link>
+
+
+
+    <joint name="right_wheel_joint" type="revolute">
+      <pose relative_to="right_wheel"/>
+      <parent>car_body</parent>
+      <child>right_wheel</child>
+      <axis>
+        <xyz expressed_in="__model__">0 1 0</xyz>
+        <dynamics>
+          <friction>0.0732352</friction>
+          <damping>0.000931</damping>
+        </dynamics>
+        <limit>
+            <lower>-1.79769e+308</lower>    <!-- negative infinity -->
+            <upper>1.79769e+308</upper>     <!-- positive infinity -->
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="left_wheel_joint" type="revolute">
+      <pose relative_to="left_wheel"/>
+      <parent>car_body</parent>
+      <child>left_wheel</child>
+      <axis>
+        <xyz expressed_in="__model__">0 1 0</xyz>
+        <dynamics>
+          <friction>0.0732352</friction>
+          <damping>0.000931</damping>
+        </dynamics>
+        <limit>
+            <lower>-1.79769e+308</lower>    <!-- negative infinity -->
+            <upper>1.79769e+308</upper>     <!-- positive infinity -->
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="caster_wheel_joint" type="ball">
+      <parent>car_body</parent>
+      <child>caster_wheel</child>
+    </joint>
+
+    <joint name="wall_follower_joint" type="fixed">
+      <parent>car_body</parent>
+      <child>wall_follower</child>
+    </joint>
+  </model>
+</sdf>

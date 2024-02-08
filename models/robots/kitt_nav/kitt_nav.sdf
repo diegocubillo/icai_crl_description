@@ -1,0 +1,79 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.9">
+  <model name="kitt_nav" canonical_link="car_body">
+    <include merge="true">
+      <uri>package://icai_crl_description/models/robots/kitt</uri>
+    </include>
+
+    <link name="nav_module">
+      <pose relative_to="car_body">0.1075 0 0.041 0 0 0</pose>
+
+      <!-- Inertial properties not updated -->
+      <inertial>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.000001</ixx>
+          <iyy>0.000001</iyy>
+          <izz>0.000001</izz>
+        </inertia>
+      </inertial>
+
+      <visual name="nav_visual">
+        <pose degrees="true">0.075 -0.06785 -0.0075 90 0 180</pose>
+        <geometry>
+          <mesh>
+            <uri>meshes/EnsamblajeNavegacionConRaspberry.STL</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+        </material>
+      </visual>
+
+      <collision name="nav_collision">
+        <pose>0 0 0.05325 0 0 0</pose>
+        <geometry>
+          <box><size>0.1374 0.130 0.1215</size></box>
+        </geometry>
+      </collision>
+
+      <sensor name='rplidar_a2m8' type='gpu_lidar'>
+        <pose>0 -0.03295 0.104 0 0 0</pose>
+        <topic>model/kitt/rplidar_a2m8</topic>
+        <update_rate>10</update_rate>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>400</samples>
+              <resolution>1</resolution>
+              <min_angle>-3.1416</min_angle>
+              <max_angle>3.1416</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0.0</min_angle>
+              <max_angle>0.0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.15</min>
+            <max>8.0</max>
+            <resolution>0.01</resolution>
+          </range>
+        </lidar>
+        <visualize>true</visualize>
+      </sensor>
+    </link> 
+
+    <joint name="nav_module_joint" type="fixed">
+      <parent>car_body</parent>
+      <child>nav_module</child>
+    </joint>
+
+  </model>
+</sdf>
