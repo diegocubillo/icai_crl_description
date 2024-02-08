@@ -3,7 +3,7 @@
 <package format="3">
   <name>icai_crl_description</name>
   <version>0.0.0</version>
-  <description>Description files of ICAI Control and Robotics Laboratory resorces</description>
+  <description>Description files of ICAI Control and Robotics Laboratory resources</description>
   <maintainer email="dcubillo@comillas.edu">Diego Cubillo</maintainer>
   <license>Apache 2.0</license>
   <author>Diego Cubillo</author>
