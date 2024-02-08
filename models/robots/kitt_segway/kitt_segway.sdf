@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.9">
+  <model name="kitt_segway" canonical_link="car_body">
+    <include merge="true">
+      <uri>package://icai_crl_description/models/robots/kitt</uri>
+
+      <experimental:params>
+        <!-- Turn kitt to vertical position -->
+        <link element_id="car_body">
+          <pose action="modify" degrees="true"> 0 0 0.05 0 -90 0 </pose>
+        </link>
+
+        <!-- Turn wall distance sensors to horizontal orientation -->
+        <link element_id="wall_follower">
+          <pose action="modify"> 0.1575 -0.10585 0.002 0 90 0 </pose>
+        </link>
+      </experimental:params>
+    </include>
+  </model>
+</sdf>
