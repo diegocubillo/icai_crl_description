@@ -1,5 +1,5 @@
 # icai_crl_description
-This package contains SDFormat environments and models of ICAI's Control and Robotics Laboratory. They are focused on Gazebo Fortress (sdformat12).
+This package contains SDFormat environment and robot models of ICAI's Control and Robotics Laboratory. They are focused on Gazebo Fortress (sdformat12).
 
 
 ## Models
@@ -15,4 +15,14 @@ The package includes the following SDF environment models:
 * Competition robot track: `ramp_circuit`
 
 
-TODO include render or real images of models
+### Pictures
+`kitt` model:
+![screenshot of kitt in Gazebo](doc/imgs/gz_kitt.png "kitt")
+
+
+`control_lab` model:
+![screenshot of control_lab in Gazebo](doc/imgs/gz_control_lab.png "control_lab")
+
+
+`ramp_circuit` model:
+![screenshot of ramp_circuit in Gazebo](doc/imgs/gz_ramp_circuit.png "ramp_circuit")
