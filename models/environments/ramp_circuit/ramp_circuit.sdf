@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.9">
+  <!-- Model of the ramp circuit -->
+  <model name="ramp_circuit">
+    <static>true</static>
+    <link name="circuit_link">
+      <collision name="circuit_collision">
+        <pose degrees="true">0 0 0.84 90 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>meshes/Pista_v04.obj</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <visual name="circuit_visual">
+        <pose degrees="true">0 0 0.84 90 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>meshes/Pista_v04.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
