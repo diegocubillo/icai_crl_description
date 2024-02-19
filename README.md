@@ -17,12 +17,12 @@ The package includes the following SDF environment models:
 
 ### Pictures
 `kitt` model:
-![screenshot of kitt in Gazebo](doc/imgs/gz_kitt.png "kitt")
+![screenshot of kitt in Gazebo](doc/imgs/real_gz_kitt.jpg "kitt")
 
 
 `control_lab` model:
-![screenshot of control_lab in Gazebo](doc/imgs/gz_control_lab.png "control_lab")
+![screenshot of control_lab in Gazebo](doc/imgs/real_gz_control_lab.jpg "control_lab")
 
 
 `ramp_circuit` model:
-![screenshot of ramp_circuit in Gazebo](doc/imgs/gz_ramp_circuit.png "ramp_circuit")
+![screenshot of ramp_circuit in Gazebo](doc/imgs/real_gz_ramp_circuit.jpg "ramp_circuit")
