@@ -43,7 +43,7 @@
         <always_on>1</always_on>
         <!-- <update_rate>20</update_rate> -->
         <visualize>true</visualize>
-        <topic>model/kitt/imu</topic>
+        <!-- <topic>model/kitt/imu</topic> -->
         <imu><enable_orientation>false</enable_orientation></imu>
       </sensor>
     </link>
@@ -84,7 +84,7 @@
       <sensor name="front_dist_sensor" type="gpu_lidar">
         <pose degrees="true">0.05 -0.0025 0 0 0 -90</pose>
         <update_rate>10</update_rate>
-        <topic>model/kitt/front_dist_sensor</topic>
+        <!-- <topic>model/kitt/front_dist_sensor</topic> -->
         <lidar>
           <scan>
             <horizontal>
@@ -110,7 +110,7 @@
       <sensor name="back_dist_sensor" type="gpu_lidar">
         <pose>-0.05 -0.0025 0 0 0 -1.5708</pose>
         <update_rate>10</update_rate>
-        <topic>model/kitt/back_dist_sensor</topic>
+        <!-- <topic>model/kitt/back_dist_sensor</topic> -->
         <lidar>
           <scan>
             <horizontal>
