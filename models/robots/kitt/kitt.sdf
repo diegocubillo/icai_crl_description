@@ -84,7 +84,7 @@
       <sensor name="front_dist_sensor" type="gpu_lidar">
         <pose degrees="true">0.05 -0.0025 0 0 0 -90</pose>
         <update_rate>10</update_rate>
-        <topic>model/kitt/front_dist_sensor</topic>
+        <topic>model/kitt/front_dist_sensor/scan</topic>
         <lidar>
           <scan>
             <horizontal>
@@ -110,7 +110,7 @@
       <sensor name="back_dist_sensor" type="gpu_lidar">
         <pose>-0.05 -0.0025 0 0 0 -1.5708</pose>
         <update_rate>10</update_rate>
-        <topic>model/kitt/back_dist_sensor</topic>
+        <topic>model/kitt/back_dist_sensor/scan</topic>
         <lidar>
           <scan>
             <horizontal>
