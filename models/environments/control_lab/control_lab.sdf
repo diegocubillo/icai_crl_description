@@ -3,25 +3,11 @@
 <sdf version="1.9">
   <model name="control_lab">
     <static>true</static>
-    <link name="lab_link">
-      <collision name="lab_collision">
-        <pose degrees="true">0 0 0 90 0 0</pose>
-        <geometry>
-          <mesh>
-            <uri>meshes/Lab_drones_sin_pistas_V2.obj</uri>
-          </mesh>
-        </geometry>
-      </collision>
+    <include merge="true">
+      <uri>package://icai_crl_description/models/environments/control_lab_lite</uri>
+    </include>
 
-      <visual name="lab_visual">
-        <pose degrees="true">0 0 0 90 0 0</pose>
-        <geometry>
-          <mesh>
-            <uri>meshes/Lab_drones_sin_pistas_V2.obj</uri>
-          </mesh>
-        </geometry>
-      </visual>
-
+    <link name="lab_lights">
       <!-- Power control side lights-->
 
       <light type="point" name="LEP11">
