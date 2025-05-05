@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.9">
+  <!-- Model of the support wall -->
+  <model name="support_wall">
+    <static>true</static>
+    <link name="wall_link">
+      <collision name="wall_collision">
+        <pose>-0.005 0 0.1 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01 0.25 0.2</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.0001</mu>
+              <mu2>0.0001</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+
+      <visual name="wall_visual">
+        <pose>-0.005 0 0.1 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01 0.25 0.2</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
