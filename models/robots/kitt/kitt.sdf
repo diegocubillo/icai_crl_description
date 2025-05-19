@@ -269,8 +269,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>0.17572</mu>
-              <mu2>0.0193121</mu2>
+              <mu>0.0008</mu>
+              <mu2>0.0008</mu2>
             </ode>
           </friction>
         </surface>
