@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.9">
+  <!-- Model of the ramp circuit -->
+  <model name="simplified_circuit">
+    <static>true</static>
+    <link name="simplified_circuit_link">
+      <collision name="simplified_circuit_collision">
+        <pose degrees="true">0 0 0 90 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>meshes/Pista_simplificada.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <visual name="simplified_circuit_visual">
+        <pose degrees="true">0 0 0 90 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>meshes/Pista_simplificada.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

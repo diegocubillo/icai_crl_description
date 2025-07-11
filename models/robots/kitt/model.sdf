@@ -96,7 +96,7 @@
           </scan>
           <range>
             <min>0.001</min>
-            <max>0.15</max> <!-- Overflow if set to more than 0.2 -->
+            <max>0.15</max>
             <resolution>0.001</resolution>
           </range>
           <noise>
@@ -122,7 +122,7 @@
           </scan>
           <range>
             <min>0.001</min>
-            <max>0.15</max> <!-- Overflow if set to more than 0.2 -->
+            <max>0.15</max>
             <resolution>0.001</resolution>
           </range>
           <noise>
@@ -268,8 +268,10 @@
         <surface>
           <friction>
             <ode>
-              <mu>0.0008</mu>
-              <mu2>0.0008</mu2>
+              <mu>0.0</mu>
+              <mu2>0.0</mu2>
+              <slip1>0.592840758</slip1>
+              <slip2>0.592840758</slip2>
             </ode>
           </friction>
         </surface>
